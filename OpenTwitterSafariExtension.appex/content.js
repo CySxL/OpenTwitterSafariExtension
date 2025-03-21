@@ -44,17 +44,14 @@ function afterNavigate() {
     }
 }, true);
 
-// 當頁面載入完成後執行
 window.addEventListener('load', function() {
     afterNavigate();
 });
 
-// 也在頁面內容載入後執行一次，確保不錯過任何情況
 document.addEventListener('DOMContentLoaded', function() {
     afterNavigate();
 });
 
-// 在網址變更時也執行（用於單頁應用）
 let lastUrl = location.href;
 new MutationObserver(() => {
     const url = location.href;
@@ -64,5 +61,4 @@ new MutationObserver(() => {
     }
 }).observe(document, {subtree: true, childList: true});
 
-// 原始的頁面載入後執行
 afterNavigate();
