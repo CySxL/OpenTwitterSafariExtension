@@ -4,7 +4,7 @@
 
     "name": "__MSG_extension_name__",
     "description": "__MSG_extension_description__",
-    "version": "1.0",
+    "version": "1.1",
 
     "icons": {
         "48": "images/icon-48.png",
@@ -22,7 +22,16 @@
     "content_scripts": [{
         "js": [ "content.js" ],
         "matches": [
-            "*://*.twitter.com/*"
+            "*://*.twitter.com/*",
+            "*://twitter.com/*",
+            "*://x.com/*",
+            "*://*.x.com/*",
+            "*://twitter.co/*",
+            "*://*.twitter.co/*",
+            "*://x.co/*",
+            "*://*.x.co/*",
+            "*://pbs.twimg.com/*",
+            "*://*.twimg.com/*"
         ]
     }],
 
@@ -38,5 +47,18 @@
         }
     },
 
-    "permissions": [ ]
+    "permissions": [
+        "nativeMessaging",
+        "tabs",
+        "*://*.twitter.com/*",
+        "*://twitter.com/*",
+        "*://x.com/*",
+        "*://*.x.com/*",
+        "*://twitter.co/*",
+        "*://*.twitter.co/*",
+        "*://x.co/*",
+        "*://*.x.co/*",
+        "*://pbs.twimg.com/*",
+        "*://*.twimg.com/*"
+    ]
 }
